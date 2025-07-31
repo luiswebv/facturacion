@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factura UI</title>
+    <!-- Tailwind + Flowbite -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link href="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900 text-sm text-gray-900 dark:text-white">
+
+    <!-- Navbar superior -->
+    <header class="flex justify-between items-center px-4 py-3 bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+      <div class="flex items-center space-x-3">
+        <img src="https://flagcdn.com/w40/mx.png" alt="MX" class="w-6 h-4" />
+        <h1 class="text-lg font-semibold">Ingreso</h1>
+      </div>
+      <button id="theme-toggle" class="text-gray-500 hover:text-blue-600 text-lg">🌓</button>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+
+      <!-- Emisor -->
+      <section>
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">🏢 Emisor</h2>
+        <label class="block text-sm font-medium mb-1">Identificación <span class="text-red-500">(obligatorio)</span></label>
+        <select class="form-select w-full rounded-lg py-1.5 px-2.5 dark:bg-gray-700 dark:border-gray-600">
+          <option>HRU020823LQ1</option>
+        </select>
+      </section>
+
+      <hr class="my-6 border-t border-gray-300 dark:border-gray-600" />
+
+      <!-- Cliente y Clientes registrados -->
+      <section>
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">👤 Cliente</h2>
+        <div class="grid lg:grid-cols-2 gap-6">
+          <!-- Cliente form -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+                🏢 Razón Social <span class="text-red-500">(obligatorio)</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Ejemplo: JOSE GONZALEZ"
+                class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+                🆔 RFC <span class="text-red-500">(obligatorio)</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Ejemplo: TARL970410GG2"
+                class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+                📮 Código Postal <span class="text-red-500">(obligatorio)</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Ejemplo: 50150"
+                class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+                📄 Régimen Fiscal <span class="text-red-500">(obligatorio)</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Régimen Fiscal..."
+                class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+                📋 Uso CFDI <span class="text-red-500">(obligatorio)</span>
+              </label>
+              <select
+                class="form-select w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+              >
+                <option>G03 - Gastos en general</option>
+                <option>D01 - Honorarios médicos</option>
+                <option>P01 - Por definir</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+                📧 Correo Electrónico <span class="text-red-500">(obligatorio)</span>
+              </label>
+              <input
+                type="email"
+                placeholder="correo@ejemplo.com"
+                class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
+          </div>
+
+
+          <!-- Clientes registrados (mantén este div tal como lo tengas o reemplaza abajo si necesitas tabla) -->
+          <div>
+            <h3 class="font-medium mb-2">📋 Clientes registrados</h3>
+            <div class="overflow-y-auto max-h-60 border rounded-lg">
+              <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300">
+                <thead class="bg-gray-200 dark:bg-gray-700">
+                  <tr>
+                    <th class="px-3 py-2">Nombre</th>
+                    <th class="px-3 py-2">ID</th>
+                    <th class="px-3 py-2">Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                    <td class="px-3 py-2">SELABE MOTORS</td>
+                    <td class="px-3 py-2">SMO080413PA</td>
+                    <td class="px-3 py-2">
+                      <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Seleccionar</button>
+                    </td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                    <td class="px-3 py-2">PETROLEOS MEXICANOS</td>
+                    <td class="px-3 py-2">PME380607P35</td>
+                    <td class="px-3 py-2">
+                      <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Seleccionar</button>
+                    </td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                    <td class="px-3 py-2">FRANCISCO LEONARDO ORNELAS SANCHEZ</td>
+                    <td class="px-3 py-2">OESF001215HA1</td>
+                    <td class="px-3 py-2">
+                      <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Seleccionar</button>
+                    </td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                    <td class="px-3 py-2">NOVO IME</td>
+                    <td class="px-3 py-2">HRU020823LQ1</td>
+                    <td class="px-3 py-2">
+                      <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Seleccionar</button>
+                    </td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                    <td class="px-3 py-2">JOSUE RAFAEL AYALA SAUCEDO</td>
+                    <td class="px-3 py-2">AASJ881023UT1</td>
+                    <td class="px-3 py-2">
+                      <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Seleccionar</button>
+                    </td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                    <td class="px-3 py-2">SELABE MOTORS</td>
+                    <td class="px-3 py-2">SMO080413PA</td>
+                    <td class="px-3 py-2">
+                      <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">Seleccionar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón debajo del formulario -->
+        <div class="mt-4">
+          <button class="bg-gray-200 dark:bg-gray-600 px-3 py-2 rounded-lg text-sm">
+            ➕ Información Opcional
+          </button>
+        </div>
+      </section>
+
+      <hr class="my-6 border-t border-gray-300 dark:border-gray-600" />
+
+      <section>
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">📦 Conceptos</h2>
+
+        <!-- Etiqueta: Concepto -->
+        <div class="mb-2">
+          <label for="conceptoInput" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            🧾 Concepto <span class="text-red-500">(obligatorio)</span>
+          </label>
+          <!-- Input + Botón como input group -->
+          <div class="flex w-full">
+            <input
+              type="text"
+              placeholder="Ejemplo: Room Charge"
+              id="conceptoInput"
+              class="form-input w-full rounded-l-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600"
+            />
+            <button
+              type="button"
+              data-modal-target="modal-concepto"
+              data-modal-toggle="modal-concepto"
+              class="bg-cyan-600 text-white px-4 text-sm font-medium rounded-r-lg hover:bg-cyan-700 border border-l-0 border-cyan-600 dark:border-gray-600"
+            >
+              🔍
+            </button>
+          </div>
+        </div>
+
+        <!-- Fila: Medida, Cantidad, Precio -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <!-- Medida comercial -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              📦 Medida comercial <span class="text-red-500">(obligatorio)</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Ejemplo: Habitación"
+              class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600"
+            />
+          </div>
+
+          <!-- Cantidad -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              🔢 Cantidad <span class="text-red-500">(obligatorio)</span>
+            </label>
+            <input
+              type="number"
+              placeholder="Cantidad"
+              class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600"
+            />
+          </div>
+
+          <!-- Precio unitario -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              💲 Precio unitario <span class="text-red-500">(obligatorio)</span>
+            </label>
+            <input
+              type="number"
+              placeholder="Precio Unitario"
+              class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600"
+            />
+          </div>
+        </div>
+
+        <!-- Tarjetas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="bg-white dark:bg-gray-800 border border-cyan-600 rounded-lg p-4 text-center">
+            <h3 class="text-cyan-600 font-bold text-lg">Impuesto</h3>
+            <p class="text-sm text-cyan-600">Indique si el concepto tiene impuesto</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 border border-yellow-500 rounded-lg p-4 text-center">
+            <h3 class="text-yellow-500 font-bold text-lg">Descuento</h3>
+            <p class="text-sm text-yellow-500">Indique si el concepto tiene descuento</p>
+          </div>
+        </div>
+
+        <!-- Botón agregar concepto -->
+        <div class="text-center">
+          <button class="w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 py-2 rounded-lg text-sm font-medium">
+            ➕ Agregar concepto
+          </button>
+        </div>
+      </section>
+
+
+      <hr class="my-6 border-t border-gray-300 dark:border-gray-600" />
+
+      <!-- Resumen -->
+      <section class="mt-8">
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">
+          📋 Resumen
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <!-- Encabezado -->
+            <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+              <h3 class="text-base font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                <span>📁</span> Complementos adicionales
+              </h3>
+            </div>
+            
+
+            <!-- Contenido: botones -->
+            <div class="p-4 space-y-2">
+              <button data-modal-target="modal-relacionados" data-modal-toggle="modal-relacionados"
+                class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Comprobantes Relacionados <span class="text-purple-500 text-lg">➕</span>
+              </button>
+
+              <button data-modal-target="modal-global" data-modal-toggle="modal-global"
+                class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Información Global <span class="text-purple-500 text-lg">➕</span>
+              </button>
+
+              <button data-modal-target="modal-complementos" data-modal-toggle="modal-complementos"
+                class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Complementos <span class="text-purple-500 text-lg">➕</span>
+              </button>
+
+              <button data-modal-target="modal-addendas" data-modal-toggle="modal-addendas"
+                class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Addendas <span class="text-purple-500 text-lg">➕</span>
+              </button>
+
+              <button data-modal-target="modal-adicional" data-modal-toggle="modal-adicional"
+                class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+                Información Adicional <span class="text-purple-500 text-lg">➕</span>
+              </button>
+            </div>
+
+            <!-- Estado + mensaje -->
+            <div class="p-4 pt-2 text-center space-y-2">
+              <span
+                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">
+                0 complementos agregados
+              </span>
+
+              <p class="text-xs text-gray-500 dark:text-gray-400">
+                Agrega los datos opcionales que necesites en el comprobante.
+              </p>
+            </div>
+          </div>
+
+          <!-- Modales -->
+          <!-- Modal base: puedes duplicar estructura para cada uno -->
+          <div id="modal-relacionados" tabindex="-1"
+  class="hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-800">
+      
+      <!-- Header -->
+      <div class="flex items-start justify-between p-4 border-b dark:border-gray-600">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+          📎 Comprobantes Relacionados
+        </h3>
+        <button type="button" data-modal-hide="modal-relacionados"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+          <svg class="w-3 h-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-6 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Tipo de Relación -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Tipo de Relación <span class="text-red-500">(obligatorio)</span>
+            </label>
+            <select
+              class="w-full rounded-lg py-2 px-3 text-sm border border-gray-300 text-gray-900 dark:text-white dark:bg-gray-700 dark:border-gray-600">
+              <option selected disabled>Tipo Relación...</option>
+              <option value="01">01 - Nota de crédito</option>
+              <option value="02">02 - Nota de débito</option>
+              <!-- Puedes agregar más opciones -->
+            </select>
+          </div>
+
+          <!-- UUID -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              UUID <span class="text-red-500">(obligatorio)</span>
+            </label>
+            <input type="text"
+              placeholder="Ejemplo: F6B10FF9-B144-4112-911D-B9810A7FD56F"
+              class="w-full rounded-lg py-2 px-3 text-sm border border-gray-300 text-gray-900 dark:text-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:placeholder-gray-400" />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="flex justify-between items-center p-4 border-t dark:border-gray-600">
+        <button data-modal-hide="modal-relacionados" type="button"
+          class="text-gray-700 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-700 dark:text-white dark:border-gray-500 dark:hover:bg-gray-600">
+          Cerrar
+        </button>
+        <button type="button"
+          class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-4 py-2">
+          Agregar
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+          <!-- Card: Información de pago -->
+          <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+              <h3 class="text-base font-semibold text-gray-900 dark:text-white">💳 Información de pago</h3>
+            </div>
+            <div class="p-4 space-y-4">
+              <!-- Moneda -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  💰 Moneda <span class="text-red-500">(obligatorio)</span>
+                </label>
+                <select class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
+                  <option>Moneda...</option>
+                </select>
+              </div>
+
+              <!-- Tasa de cambio -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  💱 Tasa de cambio <span class="text-red-500">(obligatorio)</span>
+                </label>
+                <input
+                  type="number"
+                  placeholder="0.00"
+                  class="w-full rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input"
+                />
+              </div>
+
+              <!-- Método de pago -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  💳 Método de Pago <span class="text-red-500">(obligatorio)</span>
+                </label>
+                <select class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
+                  <option>Método de Pago...</option>
+                </select>
+              </div>
+
+              <!-- Condiciones -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  🕒 Condiciones de pago
+                </label>
+                <input
+                  type="text"
+                  placeholder="Ejemplo: Pago en 3 meses"
+                  class="w-full rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input"
+                />
+              </div>
+
+              <!-- Forma de pago -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  🧾 Forma de Pago <span class="text-red-500">(obligatorio)</span>
+                </label>
+                <select class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
+                  <option>Forma de Pago...</option>
+                </select>
+              </div>
+
+              <!-- No. de Ticket -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  🎫 No. de Ticket
+                </label>
+                <input
+                  type="text"
+                  placeholder="Ejemplo: 483..."
+                  class="w-full rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: Totales del comprobante -->
+          <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <!-- Título -->
+            <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+              <h3 class="text-base font-semibold text-gray-900 dark:text-white">📑 Totales del comprobante</h3>
+            </div>
+
+            <!-- Contenido -->
+            <div class="p-4 text-sm text-gray-800 dark:text-gray-100 space-y-2">
+              <div class="flex justify-between">
+                <span><strong>Subtotal:</strong></span>
+                <span>0.00</span>
+              </div>
+              <hr class="my-2 border-gray-300 dark:border-gray-600" />
+
+              <div class="flex justify-between">
+                <span class="text-red-600 dark:text-red-400"><strong>🔻 Descuento:</strong></span>
+                <span class="text-red-600 dark:text-red-400">- 0.00</span>
+              </div>
+              <hr class="my-2 border-gray-300 dark:border-gray-600" />
+
+              <div class="flex justify-between">
+                <span><strong>Traslados:</strong></span>
+                <span>0.00</span>
+              </div>
+              <hr class="my-2 border-gray-300 dark:border-gray-600" />
+
+              <div class="flex justify-between">
+                <span><strong>Retenciones:</strong></span>
+                <span>0.00</span>
+              </div>
+              <hr class="my-2 border-gray-300 dark:border-gray-600" />
+
+              <div class="flex justify-between">
+                <span><strong>Traslados Locales:</strong></span>
+                <span>0.00</span>
+              </div>
+              <hr class="my-2 border-gray-300 dark:border-gray-600" />
+
+              <div class="flex justify-between">
+                <span><strong>Retenciones Locales:</strong></span>
+                <span>0.00</span>
+              </div>
+              <hr class="my-2 border-gray-300 dark:border-gray-600" />
+
+              <!-- Total destacado -->
+              <div class="flex justify-between items-center text-lg font-bold text-cyan-700 dark:text-cyan-400">
+                <span>Total Comprobante:</span>
+                <span>0.00</span>
+              </div>
+
+              <!-- Acción -->
+              <div class="pt-4">
+                <button
+                  data-modal-target="modal-desglose"
+                  data-modal-toggle="modal-desglose"
+                  class="w-full text-sm font-medium text-white bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg"
+                >
+                  📄 Ver desglose
+                </button>
+
+                <!-- Estado + nota -->
+                <div class="mt-3 text-center">
+                  <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                    Totales calculados
+                  </span>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                    Asegúrate de revisar los importes antes de generar el comprobante.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </section>
+
+
+      <!-- Botón generar -->
+      <div class="text-center">
+        <button
+          id="generate-btn"
+          class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg mt-6"
+        >
+          Generar comprobante
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs py-4 text-gray-500 dark:text-gray-400 border-t dark:border-gray-700 mt-8">
+      Copyright © Data Express Latinoamérica. DX Version 1.0.0
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+
+    <!-- Modo oscuro y lógica -->
+    <script>
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
+
+      document.getElementById('generate-btn').addEventListener('click', () => {
+        alert('✅ Comprobante generado (lógica demo)');
+        // Aquí puedes hacer fetch() o localStorage
+      });
+    </script>
+  </body>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('chartDesglose');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Subtotal', 'Descuento', 'Traslados', 'Retenciones'],
+          datasets: [{
+            label: 'Importes',
+            data: [300, 50, 20, 10],
+            backgroundColor: [
+              '#0e7490', // Subtotal
+              '#dc2626', // Descuento
+              '#22c55e', // Traslados
+              '#f59e0b'  // Retenciones
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+    }
+  });
+  
+</script>
+
+  <!-- Modal: Buscar concepto -->
+<div id="modal-concepto" tabindex="-1" aria-hidden="true" class="hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-y-auto md:inset-0 h-modal md:h-full">
+  <div class="relative w-full max-w-4xl max-h-full">
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-800">
+      <!-- Header con tabs -->
+      <div class="border-b dark:border-gray-700">
+        <div class="flex justify-between items-center p-4">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Conceptos
+          </h3>
+          <button type="button" class="text-gray-400 bg-transparent hover:text-gray-900 dark:hover:text-white rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center" data-modal-hide="modal-concepto">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400 px-4" id="tab-concepto" data-tabs-toggle="#tab-content-concepto" role="tablist">
+          <li class="mr-2">
+            <button class="inline-block p-2 border-b-2 rounded-t-lg text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500" id="registrados-tab" data-tabs-target="#registrados" type="button" role="tab">Conceptos registrados</button>
+          </li>
+          <li>
+            <button class="inline-block p-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="registrar-tab" data-tabs-target="#registrar" type="button" role="tab">Registrar concepto</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Body -->
+      <div id="tab-content-concepto" class="p-4">
+        <!-- Tab: Conceptos registrados -->
+        <div id="registrados" role="tabpanel">
+          <!-- Filtros -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <select class="form-select w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600">
+              <option>Todas las categorías</option>
+              <option>Hospedaje</option>
+              <option>Alimentos</option>
+              <option>Servicios</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Concepto..."
+              class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+            />
+          </div>
+
+          <!-- Tabla con scroll -->
+          <div class="overflow-y-auto max-h-80 border rounded-lg">
+            <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300">
+              <thead class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs uppercase">
+                <tr>
+                  <th class="px-4 py-2">Nombre</th>
+                  <th class="px-4 py-2">Clave SAT</th>
+                  <th class="px-4 py-2">Categoría</th>
+                  <th class="px-4 py-2">Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                  <td class="px-4 py-2">LOS DONES - PROPINAS</td>
+                  <td class="px-4 py-2">ZZ</td>
+                  <td class="px-4 py-2">Propinas</td>
+                  <td class="px-4 py-2">
+                    <button class="px-3 py-1 rounded border border-gray-300 text-sm dark:border-gray-600">Seleccionar</button>
+                  </td>
+                </tr>
+                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+                  <td class="px-4 py-2">LOBBY BAR - PROPINAS</td>
+                  <td class="px-4 py-2">ZZ</td>
+                  <td class="px-4 py-2">Propinas</td>
+                  <td class="px-4 py-2">
+                    <button class="px-3 py-1 rounded border border-gray-300 text-sm dark:border-gray-600">Seleccionar</button>
+                  </td>
+                </tr>
+                <!-- Puedes repetir más filas aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab: Registrar concepto (en blanco para ahora) -->
+        <div id="registrar" class="hidden" role="tabpanel">
+          <p class="text-sm text-gray-500 dark:text-gray-400">Aquí puedes implementar el formulario para registrar conceptos nuevos.</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="flex justify-end px-4 py-3 border-t dark:border-gray-700">
+        <button data-modal-hide="modal-concepto" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-4 py-2 rounded-lg text-sm">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Ver desglose con Chart -->
+<div id="modal-desglose" tabindex="-1" aria-hidden="true"
+  class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+  <div class="relative w-full max-w-2xl h-full md:h-auto">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <!-- Header -->
+      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+          📋 Desglose del comprobante
+        </h3>
+        <button type="button"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          data-modal-hide="modal-desglose">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-6 space-y-6">
+        <!-- Tabla -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
+              <tr>
+                <th class="px-4 py-2">Concepto</th>
+                <th class="px-4 py-2 text-right">Importe</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white dark:bg-gray-800">
+                <td class="px-4 py-2">Subtotal</td>
+                <td class="px-4 py-2 text-right">300.00</td>
+              </tr>
+              <tr class="bg-white dark:bg-gray-800">
+                <td class="px-4 py-2 text-red-500">Descuento</td>
+                <td class="px-4 py-2 text-right text-red-500">-50.00</td>
+              </tr>
+              <tr class="bg-white dark:bg-gray-800">
+                <td class="px-4 py-2">Traslados</td>
+                <td class="px-4 py-2 text-right">20.00</td>
+              </tr>
+              <tr class="bg-white dark:bg-gray-800">
+                <td class="px-4 py-2">Retenciones</td>
+                <td class="px-4 py-2 text-right">10.00</td>
+              </tr>
+              <tr class="bg-white dark:bg-gray-800 font-bold text-cyan-600 dark:text-cyan-400">
+                <td class="px-4 py-2">Total</td>
+                <td class="px-4 py-2 text-right">280.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="relative w-full max-w-xs h-50 mx-auto">
+          <canvas id="chartDesglose" class="w-full h-full"></canvas>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="flex items-center justify-end p-4 border-t border-gray-200 rounded-b dark:border-gray-600">
+        <button data-modal-hide="modal-desglose" type="button"
+          class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-5 py-2.5">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>
