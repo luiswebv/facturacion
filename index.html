@@ -53,7 +53,7 @@
       <!-- Emisor -->
       <section>
         <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">🏢 Emisor</h2>
-        <label class="block text-sm font-medium mb-1">Identificación <span class="text-red-500">(obligatorio)</span></label>
+        <label class="block text-sm font-medium mb-1">Identificación <span class="text-red-500">(*)</span></label>
         <select class="form-select w-full rounded-lg py-1.5 px-2.5 dark:bg-gray-700 dark:border-gray-600">
           <option>HRU020823LQ1</option>
         </select>
@@ -69,7 +69,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
               <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                🏢 Razón Social <span class="text-red-500">(obligatorio)</span>
+                🏢 Razón Social <span class="text-red-500">(*)</span>
               </label>
               <input
                 type="text"
@@ -80,7 +80,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                🆔 RFC <span class="text-red-500">(obligatorio)</span>
+                🆔 RFC <span class="text-red-500">(*)</span>
               </label>
               <input
                 type="text"
@@ -91,7 +91,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                📮 Código Postal <span class="text-red-500">(obligatorio)</span>
+                📮 Código Postal <span class="text-red-500">(*)</span>
               </label>
               <input
                 type="text"
@@ -102,7 +102,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                📄 Régimen Fiscal <span class="text-red-500">(obligatorio)</span>
+                📄 Régimen Fiscal <span class="text-red-500">(*)</span>
               </label>
               <input
                 type="text"
@@ -113,7 +113,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                📋 Uso CFDI <span class="text-red-500">(obligatorio)</span>
+                📋 Uso CFDI <span class="text-red-500">(*)</span>
               </label>
               <select
                 class="form-select w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
@@ -126,7 +126,7 @@
 
             <div>
               <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                📧 Correo Electrónico <span class="text-red-500">(obligatorio)</span>
+                📧 Correo Electrónico <span class="text-red-500">(*)</span>
               </label>
               <input
                 type="email"
@@ -214,7 +214,7 @@
         <!-- Etiqueta: Concepto -->
         <div class="mb-2">
           <label for="conceptoInput" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            🧾 Concepto <span class="text-red-500">(obligatorio)</span>
+            🧾 Concepto <span class="text-red-500">(*)</span>
           </label>
           <!-- Input + Botón como input group -->
           <div class="flex w-full">
@@ -240,7 +240,7 @@
           <!-- Medida comercial -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              📦 Medida comercial <span class="text-red-500">(obligatorio)</span>
+              📦 Medida comercial <span class="text-red-500">(*)</span>
             </label>
             <input
               type="text"
@@ -252,7 +252,7 @@
           <!-- Cantidad -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              🔢 Cantidad <span class="text-red-500">(obligatorio)</span>
+              🔢 Cantidad <span class="text-red-500">(*)</span>
             </label>
             <input
               type="number"
@@ -264,7 +264,7 @@
           <!-- Precio unitario -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              💲 Precio unitario <span class="text-red-500">(obligatorio)</span>
+              💲 Precio unitario <span class="text-red-500">(*)</span>
             </label>
             <input
               type="number"
@@ -402,7 +402,7 @@
           <!-- Tipo de Relación -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Tipo de Relación <span class="text-red-500">(obligatorio)</span>
+              Tipo de Relación <span class="text-red-500">(*)</span>
             </label>
             <select
               class="w-full rounded-lg py-2 px-3 text-sm border border-gray-300 text-gray-900 dark:text-white dark:bg-gray-700 dark:border-gray-600">
@@ -416,7 +416,7 @@
           <!-- UUID -->
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              UUID <span class="text-red-500">(obligatorio)</span>
+              UUID <span class="text-red-500">(*)</span>
             </label>
             <input type="text"
               placeholder="Ejemplo: F6B10FF9-B144-4112-911D-B9810A7FD56F"
@@ -451,7 +451,7 @@
               <!-- Moneda -->
               <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  💰 Moneda <span class="text-red-500">(obligatorio)</span>
+                  💰 Moneda <span class="text-red-500">(*)</span>
                 </label>
                 <select class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
                   <option>Moneda...</option>
@@ -461,7 +461,7 @@
               <!-- Tasa de cambio -->
               <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  💱 Tasa de cambio <span class="text-red-500">(obligatorio)</span>
+                  💱 Tasa de cambio <span class="text-red-500">(*)</span>
                 </label>
                 <input
                   type="number"
@@ -473,7 +473,7 @@
               <!-- Método de pago -->
               <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  💳 Método de Pago <span class="text-red-500">(obligatorio)</span>
+                  💳 Método de Pago <span class="text-red-500">(*)</span>
                 </label>
                 <select class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
                   <option>Método de Pago...</option>
@@ -495,7 +495,7 @@
               <!-- Forma de pago -->
               <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  🧾 Forma de Pago <span class="text-red-500">(obligatorio)</span>
+                  🧾 Forma de Pago <span class="text-red-500">(*)</span>
                 </label>
                 <select class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
                   <option>Forma de Pago...</option>
