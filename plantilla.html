@@ -329,6 +329,64 @@
 
   <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
+  <div>
+    <h2 class="text-3xl font-semibold dark:text-white mb-4"> Inputs</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+
+      <!-- Texto -->
+      <div>
+        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+          👤 Nombre <span class="text-red-500">(obligatorio)</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Ejemplo: Juan Pérez"
+          class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+        />
+      </div>
+
+      <!-- Número -->
+      <div>
+        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+          🔢 Edad
+        </label>
+        <input
+          type="number"
+          placeholder="Ejemplo: 30"
+          class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+        />
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+          🔒 Contraseña
+        </label>
+        <input
+          type="password"
+          placeholder="••••••••"
+          class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"
+        />
+      </div>
+
+      <!-- Select -->
+      <div>
+        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+          📋 Selecciona una opción
+        </label>
+        <select
+          class="form-select w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600">
+          <option disabled selected>Seleccione...</option>
+          <option value="op1">Opción 1</option>
+          <option value="op2">Opción 2</option>
+          <option value="op3">Opción 3</option>
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
   <!-- Sección: Formulario -->
   <section>
     <h2 class="text-3xl font-semibold dark:text-white mb-4">📝 Formulario de contacto</h2>
