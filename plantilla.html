@@ -17,17 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-    <script>
-        const btn = document.getElementById('modoOscuro');
-        const icon = document.getElementById('iconoModo');
-
-        btn.addEventListener('click', () => {
-            const html = document.documentElement;
-            const darkMode = html.classList.toggle('dark');
-            icon.textContent = darkMode ? '☀️' : '🌙';
-        });
-
-    </script>
     <!-- Chart.js (si usas Flowbite charts) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -123,10 +112,102 @@
 
         });
     </script>
+    <script>
+        const container = document.getElementById('tarjetasContainer');
+        const tarjetas = container.querySelectorAll('.tarjeta');
+
+        if (tarjetas.length > 5) {
+            container.classList.remove('flex-wrap');
+            container.classList.add('overflow-x-auto', 'whitespace-nowrap', 'gap-2', 'pb-2');
+            tarjetas.forEach(card => {
+            card.classList.remove('w-full', 'sm:w-1/2', 'md:w-1/3', 'lg:w-1/4', 'xl:w-1/5');
+            card.classList.add('w-64', 'inline-block');
+            });
+        }
+    </script>
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
         }
+        .checkbox-wrapper-46 input[type="checkbox"] {
+        display: none;
+        visibility: hidden;
+        }
+
+        .checkbox-wrapper-46 .cbx {
+        margin: auto;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        }
+        .checkbox-wrapper-46 .cbx span {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translate3d(0, 0, 0);
+        }
+        .checkbox-wrapper-46 .cbx span:first-child {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        transform: scale(1);
+        vertical-align: middle;
+        border: 1px solid #9098a9;
+        transition: all 0.2s ease;
+        }
+        .checkbox-wrapper-46 .cbx span:first-child svg {
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 16px;
+        stroke-dashoffset: 16px;
+        transition: all 0.3s ease;
+        transition-delay: 0.1s;
+        transform: translate3d(0, 0, 0);
+        }
+        .checkbox-wrapper-46 .cbx span:first-child:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #1571BB;
+        display: block;
+        transform: scale(0);
+        opacity: 1;
+        border-radius: 50%;
+        }
+        .checkbox-wrapper-46 .cbx span:last-child {
+        padding-left: 8px;
+        }
+        .checkbox-wrapper-46 .cbx:hover span:first-child {
+        border-color: #1571BB;
+        }
+
+        .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+        background: #1571BB;
+        border-color: #1571BB;
+        animation: wave-46 0.4s ease;
+        }
+        .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+        stroke-dashoffset: 0;
+        }
+        .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+        transform: scale(3.5);
+        opacity: 0;
+        transition: all 0.6s ease;
+        }
+
+        @keyframes wave-46 {
+        50% {
+            transform: scale(0.9);
+        }
+        }
+
     </style>
 </head>
 
@@ -271,11 +352,35 @@
                     </button>
                 </div>
             </div>
-            <div
-                class="bg-white dark:bg-gray-800 border border-cyan-600 rounded-lg p-4 text-center transition duration-300 hover:bg-cyan-50 hover:dark:bg-gray-700 hover:border-cyan-700 cursor-pointer">
-                <h3 class="text-cyan-600 font-bold text-lg">Impuesto</h3>
-                <p class="text-sm text-cyan-600">Indique si el concepto tiene impuesto</p>
-            </div>
+            <!-- Contenedor padre dinámico -->
+<div id="tarjetasContainer"
+     class="flex flex-wrap gap-4 transition-all duration-300 max-w-full overflow-hidden sm:overflow-visible">
+  
+  <!-- Tarjeta 1 -->
+  <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 shrink-0 bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
+    <!-- Ícono -->
+    <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.5a.75.75 0 00-1.5 0v.55a2.25 2.25 0 00-.866 4.322l.616.246a.75.75 0 01-.27 1.45h-.23a.75.75 0 100 1.5h.25v.25a.75.75 0 001.5 0v-.55a2.25 2.25 0 00.866-4.322l-.616-.246a.75.75 0 01.27-1.45h.23a.75.75 0 000-1.5h-.25v-.25z" />
+      </svg>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Impuesto</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene impuesto.</p>
+  </div>
+
+  <!-- Tarjeta 2 -->
+  <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 shrink-0 bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
+    <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.5a.75.75 0 00-1.5 0v.55a2.25 2.25 0 00-.866 4.322l.616.246a.75.75 0 01-.27 1.45h-.23a.75.75 0 100 1.5h.25v.25a.75.75 0 001.5 0v-.55a2.25 2.25 0 00.866-4.322l-.616-.246a.75.75 0 01.27-1.45h.23a.75.75 0 000-1.5h-.25v-.25z" />
+      </svg>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Descuento</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene descuentos.</p>
+  </div>
+
+  <!-- ...Agrega más tarjetas similares aquí -->
+</div>
 
         </section>
 
@@ -752,35 +857,12 @@
     <!-- Sección: Spinner independiente -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">🔄 Loader (spinner) independiente</h2>
-        <div role="status">
-            <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
-                viewBox="0 0 100 101" fill="none">
-                <path d="M100 50.5908C100 78.2051 77.6142 
-          100.591 50 100.591C22.3858 100.591 0 
-          78.2051 0 50.5908C0 22.9766 22.3858 
-          0.59082 50 0.59082C77.6142 0.59082 
-          100 22.9766 100 50.5908ZM9.08144 
-          50.5908C9.08144 73.1895 27.4013 
-          91.5094 50 91.5094C72.5987 91.5094 
-          90.9186 73.1895 90.9186 50.5908C90.9186 
-          27.9921 72.5987 9.67226 50 9.67226C27.4013 
-          9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
-                <path d="M93.9676 39.0409C96.393 38.4038 
-          97.8624 35.9116 97.0079 33.5539C95.2932 
-          28.8227 92.871 24.3692 89.8167 20.348C85.8452 
-          15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 
-          4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 
-          0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 
-          1.69328 37.813 4.19778 38.4501 6.62326C39.0873 
-          9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 
-          9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 
-          10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 
-          17.9648 79.3347 21.5619 82.5849 25.841C84.9175 
-          28.9121 86.7997 32.2913 88.1811 35.8758C89.083 
-          38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
-            </svg>
-            <span class="sr-only">Loading...</span>
+        <!-- From Uiverse.io by TamaniPhiri --> 
+        <div class="flex flex-col gap-4 w-full items-center justify-center">
+            <div class="w-28 h-28 border-8 text-[#1571BB] text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-[#1571BB] rounded-full">
+            </div>
         </div>
+
     </section>
 
     <!-- Sección: Datepicker -->
@@ -898,18 +980,17 @@
     <h2 class="text-3xl font-semibold dark:text-white mb-4">☑️ Checkboxes</h2>
 
     <div class="flex items-center mb-4">
-        <input id="default-checkbox" type="checkbox" value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default
-            checkbox</label>
+        <div class="checkbox-wrapper-46">
+        <input type="checkbox" id="cbx-46" class="inp-cbx" />
+        <label for="cbx-46" class="cbx"
+            ><span>
+            <svg viewBox="0 0 12 10" height="10px" width="12px">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+            >
+        </label>
+        </div>
     </div>
-    <div class="flex items-center">
-        <input checked id="checked-checkbox" type="checkbox" value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-        <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked
-            state</label>
-    </div>
-
+    
     <!-- Sección: Radios -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
     <h2 class="text-3xl font-semibold dark:text-white mb-4">🔘 Radios</h2>
@@ -1018,6 +1099,18 @@
     <footer class="text-center mt-10 text-sm text-gray-500 dark:text-gray-400">
         Hecho con Flowbite & Tailwind CSS
     </footer>
+
+    <script>
+        const btn = document.getElementById('modoOscuro');
+        const icon = document.getElementById('iconoModo');
+
+        btn.addEventListener('click', () => {
+            const html = document.documentElement;
+            const darkMode = html.classList.toggle('dark');
+            icon.textContent = darkMode ? '☀️' : '🌙';
+        });
+
+    </script>
 </body>
 
 </html>
