@@ -128,7 +128,7 @@
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
         .checkbox-wrapper-46 input[type="checkbox"] {
         display: none;
@@ -357,29 +357,21 @@
      class="flex flex-wrap gap-4 transition-all duration-300 max-w-full overflow-hidden sm:overflow-visible">
   
   <!-- Tarjeta 1 -->
-  <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 shrink-0 bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
-    <!-- Ícono -->
-    <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.5a.75.75 0 00-1.5 0v.55a2.25 2.25 0 00-.866 4.322l.616.246a.75.75 0 01-.27 1.45h-.23a.75.75 0 100 1.5h.25v.25a.75.75 0 001.5 0v-.55a2.25 2.25 0 00.866-4.322l-.616-.246a.75.75 0 01.27-1.45h.23a.75.75 0 000-1.5h-.25v-.25z" />
-      </svg>
-    </div>
-    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Impuesto</h3>
-    <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene impuesto.</p>
-  </div>
+        <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-1/2 shrink-0 bg-[#F1F5F9] dark:bg-[#0F172A] border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
+        <!-- Ícono -->
+        <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Impuesto</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene impuesto.</p>
+        </div>
 
-  <!-- Tarjeta 2 -->
-  <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 shrink-0 bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
-    <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.5a.75.75 0 00-1.5 0v.55a2.25 2.25 0 00-.866 4.322l.616.246a.75.75 0 01-.27 1.45h-.23a.75.75 0 100 1.5h.25v.25a.75.75 0 001.5 0v-.55a2.25 2.25 0 00.866-4.322l-.616-.246a.75.75 0 01.27-1.45h.23a.75.75 0 000-1.5h-.25v-.25z" />
-      </svg>
-    </div>
-    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Descuento</h3>
-    <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene descuentos.</p>
-  </div>
-
-  <!-- ...Agrega más tarjetas similares aquí -->
+        <!-- Tarjeta 2 -->
+        <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-1/2 shrink-0 bg-[#F1F5F9] dark:bg-[#0F172A] border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
+        <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Descuento</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene descuentos.</p>
+        </div>
 </div>
 
         </section>
@@ -393,7 +385,8 @@
             <p class="mb-2 text-gray-500 dark:text-gray-400">Este es un menú desplegable simple utilizando Flowbite con
                 funcionalidad toggle.</p>
             <button id="botonDropdown" data-dropdown-toggle="menuDropdown"
-                class="px-4 py-2 bg-blue-600 text-white rounded mb-3">Abrir menú</button>
+                class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
+                    style="background-color: #1571BB;">Abrir menú</button>
             <div id="menuDropdown"
                 class="hidden z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
