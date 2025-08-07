@@ -15,22 +15,13 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-    <!-- Chart.js (si usas Flowbite charts) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- ApexCharts (para el gráfico "area-chart") -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-
-    <!-- Simple DataTables -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
-
-    <!-- Tu script personalizado -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Configuración de gráfico ApexCharts
             const options = {
                 chart: {
                     height: "100%",
@@ -220,7 +211,6 @@
                 <span id="iconoModo">🌙</span>
             </button>
         </div>
-        <!-- Títulos principales -->
         <section>
             <h1 class="flex items-center text-5xl font-extrabold dark:text-white">Plantilla
                 <span
@@ -229,45 +219,32 @@
             </h1>
             <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
             <div class="space-y-6">
-                <!-- Título -->
                 <div>
                     <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Paleta de colores</h2>
                     <p class="text-sm text-gray-500 dark:text-gray-400">Colores base utilizados en el sistema</p>
                 </div>
 
-                <!-- Paleta de colores -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                    <!-- Primary -->
                     <div class="rounded-lg shadow p-4 bg-[#1571BB] text-white">
                         <p class="font-semibold">Primary</p>
                         <p class="text-sm">#1571BB</p>
                     </div>
-
-                    <!-- Primary Dark -->
                     <div class="rounded-lg shadow p-4 bg-[#105F9B] text-white">
                         <p class="font-semibold">Primary Dark</p>
                         <p class="text-sm">#105F9B</p>
                     </div>
-
-                    <!-- Secondary (nuevo tono sobrio) -->
                     <div class="rounded-lg shadow p-4 bg-[#3D91C3] text-white">
                         <p class="font-semibold">Secondary</p>
                         <p class="text-sm">#3D91C3</p>
                     </div>
-
-                    <!-- Secondary Dark -->
                     <div class="rounded-lg shadow p-4 bg-[#0E3C5D] text-white">
                         <p class="font-semibold">Secondary Dark</p>
                         <p class="text-sm">#0E3C5D</p>
                     </div>
-
-                    <!-- Fondo Claro (White) -->
                     <div class="rounded-lg shadow p-4 bg-[#F1F5F9] text-gray-800 dark:bg-gray-800 dark:text-white">
                         <p class="font-semibold">White (Fondo Claro)</p>
                         <p class="text-sm">#F1F5F9</p>
                     </div>
-
-                    <!-- Fondo Oscuro (Black) -->
                     <div class="rounded-lg shadow p-4 bg-[#0F172A] text-white">
                         <p class="font-semibold">Black (Fondo Oscuro)</p>
                         <p class="text-sm">#0F172A</p>
@@ -290,7 +267,6 @@
 
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-        <!-- Sección: Párrafos -->
         <section>
             <h2 class="text-3xl font-semibold dark:text-white mb-4">📄 Párrafos informativos</h2>
             <div class="grid md:grid-cols-2 gap-6">
@@ -307,23 +283,17 @@
 
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-        <!-- Sección: Botones -->
         <section>
             <h2 class="text-3xl font-semibold dark:text-white mb-4">🔘 Botones personalizados</h2>
 
-            <!-- Grid de botones -->
             <div class="grid md:grid-cols-2 gap-4">
 
-                <!-- Columna izquierda: botones primarios -->
                 <div class="space-y-3">
-                    <!-- Botón Primario -->
                     <button type="button"
                         class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
                         style="background-color: #1571BB;">
                         Primary button
                     </button>
-
-                    <!-- Botón Primario Dark -->
                     <button type="button"
                         class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
                         style="background-color: #105F9B;">
@@ -331,16 +301,12 @@
                     </button>
                 </div>
 
-                <!-- Columna derecha: botones secundarios -->
                 <div class="space-y-3 mb-4">
-                    <!-- Botón Secundario -->
                     <button type="button"
                         class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
                         style="background-color: #3D91C3;">
                         Secundary button
                     </button>
-
-                    <!-- Botón Secundario Dark -->
                     <button type="button"
                         class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
                         style="background-color: #0E3C5D;">
@@ -352,34 +318,26 @@
                     </button>
                 </div>
             </div>
-            <!-- Contenedor padre dinámico -->
-<div id="tarjetasContainer"
-     class="flex flex-wrap gap-4 transition-all duration-300 max-w-full overflow-hidden sm:overflow-visible">
-  
-  <!-- Tarjeta 1 -->
-        <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-1/2 shrink-0 bg-[#F1F5F9] dark:bg-[#0F172A] border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
-        <!-- Ícono -->
-        <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Impuesto</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene impuesto.</p>
-        </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-1/2 shrink-0 bg-[#F1F5F9] dark:bg-[#0F172A] border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
-        <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Descuento</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene descuentos.</p>
-        </div>
-</div>
-
+            <div id="tarjetasContainer"
+                class="flex flex-wrap gap-4 transition-all duration-300 max-w-full overflow-hidden sm:overflow-visible">
+            
+                    <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-1/2 shrink-0 bg-[#F1F5F9] dark:bg-[#0F172A] border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
+                    <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Impuesto</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene impuesto.</p>
+                    </div>
+                    <div class="tarjeta transition-all duration-300 p-4 rounded-xl w-1/2 shrink-0 bg-[#F1F5F9] dark:bg-[#0F172A] border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-md relative group">
+                    <div class="absolute top-4 right-4 text-cyan-600 dark:text-cyan-400">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Descuento</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Indique si el concepto tiene descuentos.</p>
+                    </div>
+            </div>
         </section>
-
 
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-        <!-- Sección: Dropdown -->
         <section>
             <h2 class="text-3xl font-semibold dark:text-white mb-4">⬇️ Dropdown / Menú desplegable</h2>
             <p class="mb-2 text-gray-500 dark:text-gray-400">Este es un menú desplegable simple utilizando Flowbite con
@@ -398,7 +356,6 @@
 
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-        <!-- Sección: Modal -->
         <section>
             <h2 class="text-3xl font-semibold dark:text-white mb-4">🧩 Modal emergente</h2>
             <p class="mb-2 text-gray-500 dark:text-gray-400">Ejemplo de modal activado desde botón, usando Flowbite y
@@ -424,11 +381,9 @@
                 </div>
             </div>
         </section>
-
     </div>
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Modal de confirmación -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">❓ Modal de preguntas / Confirmación</h2>
         <p class="mb-2 text-gray-500 dark:text-gray-400">Modal de confirmación clásico para eliminar elementos o
@@ -473,7 +428,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Acordeón -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">📂 Acordeón / Preguntas frecuentes</h2>
         <div class="mb-3 text-gray-500 dark:text-gray-400">Ideal para desplegar contenido colapsable como FAQs o bloques
@@ -494,7 +448,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Tabs -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">📑 Pestañas (Tabs)</h2>
         <p class="mb-3 text-gray-500 dark:text-gray-400">Para navegar entre vistas o secciones dentro del mismo
@@ -512,7 +465,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Alertas -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">🚨 Alertas</h2>
         <div class="grid md:grid-cols-2 gap-6">
@@ -527,7 +479,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Tooltip -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">💬 Tooltip</h2>
         <p class="mb-3 text-gray-500 dark:text-gray-400">Muestra información contextual al pasar el cursor.</p>
@@ -548,8 +499,6 @@
     <div>
         <h2 class="text-3xl font-semibold dark:text-white mb-4"> Inputs</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-
-            <!-- Texto -->
             <div>
                 <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
                     👤 Nombre <span class="text-red-500">(obligatorio)</span>
@@ -557,8 +506,6 @@
                 <input type="text" placeholder="Ejemplo: Juan Pérez"
                     class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
             </div>
-
-            <!-- Número -->
             <div>
                 <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
                     🔢 Edad
@@ -566,8 +513,6 @@
                 <input type="number" placeholder="Ejemplo: 30"
                     class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
             </div>
-
-            <!-- Password -->
             <div>
                 <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
                     🔒 Contraseña
@@ -575,8 +520,6 @@
                 <input type="password" placeholder="••••••••"
                     class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
             </div>
-
-            <!-- Select -->
             <div>
                 <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
                     📋 Selecciona una opción
@@ -588,12 +531,9 @@
                     <option value="op3">Opción 3</option>
                 </select>
             </div>
-
         </div>
-
     </div>
 
-    <!-- Sección: Formulario -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">📝 Formulario de contacto</h2>
         <p class="mb-3 text-gray-500 dark:text-gray-400">Ejemplo de formulario con campos comunes: nombre, correo y
@@ -601,7 +541,6 @@
 
         <form class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Nombre -->
                 <div>
                     <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
                         👤 Nombre <span class="text-red-500">(obligatorio)</span>
@@ -609,8 +548,6 @@
                     <input type="text" placeholder="Ejemplo: Juan Pérez"
                         class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
                 </div>
-
-                <!-- Correo -->
                 <div>
                     <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
                         📧 Correo Electrónico <span class="text-red-500">(obligatorio)</span>
@@ -619,8 +556,6 @@
                         class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
                 </div>
             </div>
-
-            <!-- Mensaje -->
             <div>
                 <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
                     💬 Mensaje <span class="text-red-500">(obligatorio)</span>
@@ -628,8 +563,6 @@
                 <textarea rows="4" placeholder="Escribe tu mensaje..."
                     class="form-textarea w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600"></textarea>
             </div>
-
-            <!-- Botón Enviar -->
             <div class="flex justify-end">
                 <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
                     🚀 Enviar
@@ -640,7 +573,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Tabla -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">📋 Tabla básica</h2>
         <p class="mb-3 text-gray-500 dark:text-gray-400">Ejemplo de tabla con 3 columnas y datos de usuarios. Responsive
@@ -673,15 +605,12 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Alertas -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">🔔 Alertas de sistema</h2>
         <p class="mb-3 text-gray-500 dark:text-gray-400">Muestra mensajes contextuales para usuarios: errores,
             advertencias, éxito o información.</p>
 
         <div class="grid md:grid-cols-2 gap-4">
-
-            <!-- Info -->
             <div class="flex items-center p-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
                 role="alert">
                 <svg class="shrink-0 w-4 h-4 me-3" fill="currentColor" viewBox="0 0 20 20">
@@ -690,8 +619,6 @@
                 </svg>
                 <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
             </div>
-
-            <!-- Error -->
             <div class="flex items-center p-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
                 role="alert">
                 <svg class="shrink-0 w-4 h-4 me-3" fill="currentColor" viewBox="0 0 20 20">
@@ -700,8 +627,6 @@
                 </svg>
                 <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
             </div>
-
-            <!-- Éxito -->
             <div class="flex items-center p-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
                 role="alert">
                 <svg class="shrink-0 w-4 h-4 me-3" fill="currentColor" viewBox="0 0 20 20">
@@ -710,8 +635,6 @@
                 </svg>
                 <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
             </div>
-
-            <!-- Advertencia -->
             <div class="flex items-center p-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
                 role="alert">
                 <svg class="shrink-0 w-4 h-4 me-3" fill="currentColor" viewBox="0 0 20 20">
@@ -720,8 +643,6 @@
                 </svg>
                 <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
             </div>
-
-            <!-- Neutra / Gris -->
             <div class="flex items-center p-4 text-sm text-gray-800 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300"
                 role="alert">
                 <svg class="shrink-0 w-4 h-4 me-3" fill="currentColor" viewBox="0 0 20 20">
@@ -735,7 +656,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Badges -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">🏷️ Badges (etiquetas de estado)</h2>
         <span
@@ -752,7 +672,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Breadcrumb -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">🧭 Breadcrumb (navegación)</h2>
         <nav class="flex" aria-label="Breadcrumb">
@@ -793,7 +712,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Botón con spinner -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">⏳ Botón de carga con spinner</h2>
         <button disabled type="button"
@@ -831,7 +749,6 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Tooltip -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">💡 Tooltip básico</h2>
         <button data-tooltip-target="tooltip-default" type="button"
@@ -847,18 +764,14 @@
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-    <!-- Sección: Spinner independiente -->
     <section>
         <h2 class="text-3xl font-semibold dark:text-white mb-4">🔄 Loader (spinner) independiente</h2>
-        <!-- From Uiverse.io by TamaniPhiri --> 
         <div class="flex flex-col gap-4 w-full items-center justify-center">
             <div class="w-28 h-28 border-8 text-[#1571BB] text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-[#1571BB] rounded-full">
             </div>
         </div>
-
     </section>
 
-    <!-- Sección: Datepicker -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
     <h2 class="text-3xl font-semibold dark:text-white mb-4">📅 Selector de Fecha</h2>
 
@@ -875,7 +788,6 @@
             placeholder="Select date">
     </div>
 
-    <!-- Sección: Toasts -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
     <h2 class="text-3xl font-semibold dark:text-white mb-4">🔔 Notificaciones Toast</h2>
 
@@ -951,10 +863,9 @@
         </button>
     </div>
 
-    <!-- Sección: Select -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    
     <h2 class="text-3xl font-semibold dark:text-white mb-4">🔽 Select (Opciones desplegables)</h2>
-
     <form class="max-w-sm mx-auto">
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
             option</label>
@@ -968,7 +879,6 @@
         </select>
     </form>
 
-    <!-- Sección: Checkboxes -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
     <h2 class="text-3xl font-semibold dark:text-white mb-4">☑️ Checkboxes</h2>
 
@@ -984,10 +894,9 @@
         </div>
     </div>
     
-    <!-- Sección: Radios -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    
     <h2 class="text-3xl font-semibold dark:text-white mb-4">🔘 Radios</h2>
-
     <div class="flex items-center mb-4">
         <input id="default-radio-1" type="radio" value="" name="default-radio"
             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -1001,7 +910,6 @@
             state</label>
     </div>
 
-    <!-- Sección: Toggle -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
     <h2 class="text-3xl font-semibold dark:text-white mb-4">🕹️ Toggle (Interruptor)</h2>
 
@@ -1013,7 +921,6 @@
         <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
     </label>
 
-    <!-- Sección: Tarjeta estadística con dropdown -->
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
     <h2 class="text-3xl font-semibold dark:text-white mb-4">📊 Tarjeta de Estadísticas (Facturación)</h2>
 
@@ -1034,12 +941,10 @@
             </div>
         </div>
 
-        <!-- Área del gráfico -->
         <div id="area-chart"></div>
 
         <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
             <div class="flex justify-between items-center pt-5">
-                <!-- Botón dropdown -->
                 <button id="dropdownDefaultButton" data-dropdown-toggle="lastDaysdropdown"
                     data-dropdown-placement="bottom"
                     class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
@@ -1052,7 +957,6 @@
                     </svg>
                 </button>
 
-                <!-- Dropdown -->
                 <div id="lastDaysdropdown"
                     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
@@ -1074,7 +978,6 @@
                     </ul>
                 </div>
 
-                <!-- Enlace a reporte -->
                 <a href="#"
                     class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2">
                     Users Report
@@ -1088,7 +991,30 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <div>
+        <h1>Distribución</h1>
+        <div class="flex flex-wrap -mx-2 justify-center">
+        <div class="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
+            <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Básico</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Ideal para empezar</p>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
+            <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Estándar</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Negocios en crecimiento</p>
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
+            <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Premium</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Todo incluido</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    
     <footer class="text-center mt-10 text-sm text-gray-500 dark:text-gray-400">
         Hecho con Flowbite & Tailwind CSS
     </footer>
@@ -1105,5 +1031,4 @@
 
     </script>
 </body>
-
 </html>
