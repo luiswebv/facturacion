@@ -12,23 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
     <script>
-        const html = document.documentElement;
-        const btn = document.getElementById('modoOscuro');
-        const iconLuna = document.getElementById('iconLuna');
-        const iconSol = document.getElementById('iconSol');
-
-        btn.addEventListener('click', () => {
-            const isDark = html.classList.toggle('dark');
-            iconLuna.classList.toggle('hidden', isDark);
-            iconSol.classList.toggle('hidden', !isDark);
-        });
-
-        document.getElementById('generate-btn').addEventListener('click', () => {
-            alert('✅ Comprobante generado (lógica demo)');
-        });
-    </script>
-    </body>
-    <script>
         document.addEventListener('DOMContentLoaded', function () {
             const ctx = document.getElementById('chartDesglose');
             if (ctx) {
@@ -62,9 +45,56 @@
         });
     </script>
     <link href="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.css" rel="stylesheet" />
+    <style>
+        .modern-btn {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            background: #1571BB;
+        }
+
+        .modern-btn:hover {
+            background: #0f5a96;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(21, 113, 187, 0.3);
+        }
+
+        .modern-btn:active {
+            transform: translateY(0);
+        }
+
+        .modern-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .modern-btn:hover::before {
+            left: 100%;
+        }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
 </head>
 
-<body class="bg-gray-100 dark:bg-gray-900 text-sm text-gray-900 dark:text-white">
+<body class="dark:bg-gray-900 text-sm text-gray-900 dark:text-white">
 
     <header class="flex justify-between items-center px-4 py-3 bg-white dark:bg-gray-800 border-b dark:border-gray-700">
         <div class="flex items-center space-x-3">
@@ -97,7 +127,7 @@
 
         <section>
             <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">🏢 Emisor</h2>
-            <label class="block text-sm font-medium mb-1">Identificación <span class="text-red-500">(*)</span></label>
+            <label class="block text-sm font-medium mb-1">Identificación <span class="text-red-500">*</span></label>
             <select class="form-select w-full rounded-lg py-1.5 px-2.5 dark:bg-gray-700 dark:border-gray-600">
                 <option>HRU020823LQ1</option>
             </select>
@@ -105,136 +135,188 @@
 
         <hr class="my-6 border-t border-gray-300 dark:border-gray-600" />
 
-        <section>
-            <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">👤 Cliente</h2>
-            <div class="grid lg:grid-cols-2 gap-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                            🏢 Razón Social <span class="text-red-500">(*)</span>
-                        </label>
-                        <input type="text" placeholder="Ejemplo: JOSE GONZALEZ"
-                            class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                            🆔 RFC <span class="text-red-500">(*)</span>
-                        </label>
-                        <input type="text" placeholder="Ejemplo: TARL970410GG2"
-                            class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                            📮 Código Postal <span class="text-red-500">(*)</span>
-                        </label>
-                        <input type="text" placeholder="Ejemplo: 50150"
-                            class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                            📄 Régimen Fiscal <span class="text-red-500">(*)</span>
-                        </label>
-                        <input type="text" placeholder="Régimen Fiscal..."
-                            class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
-                    </div>
+        <section class="max-w-screen-xl mx-auto px-3 sm:px-4">
+  <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">👤 Cliente</h2>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                            📋 Uso CFDI <span class="text-red-500">(*)</span>
-                        </label>
-                        <select class="form-select w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600">
-                            <option>G03 - Gastos en general</option>
-                            <option>D01 - Honorarios médicos</option>
-                            <option>P01 - Por definir</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-                            📧 Correo Electrónico <span class="text-red-500">(*)</span>
-                        </label>
-                        <input type="email" placeholder="correo@ejemplo.com"
-                            class="form-input w-full rounded-lg py-2 px-3 dark:bg-gray-700 dark:border-gray-600" />
-                    </div>
-                </div>
+  <div class="grid gap-6 lg:grid-cols-2">
+    <!-- Formulario -->
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 min-w-0">
+      <!-- Razón social -->
+      <div class="relative min-w-0">
+        <input
+          type="text"
+          id="rs"
+          class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          autocomplete="organization"
+        />
+        <label for="rs"
+          class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 start-1">
+          <i class="ph ph-identification-card"></i> Razón social
+        </label>
+      </div>
 
-                <div>
-                    <h3 class="font-medium mb-2">📋 Clientes registrados</h3>
-                    <div class="overflow-y-auto max-h-60 border rounded-lg">
-                        <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300">
-                            <thead class="bg-gray-200 dark:bg-gray-700">
-                                <tr>
-                                    <th class="px-3 py-2">Nombre</th>
-                                    <th class="px-3 py-2">ID</th>
-                                    <th class="px-3 py-2">Acción</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="px-3 py-2">SELABE MOTORS</td>
-                                    <td class="px-3 py-2">SMO080413PA</td>
-                                    <td class="px-3 py-2">
-                                        <button
-                                            class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
-                                            style="background-color: #1571BB;">Seleccionar</button>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="px-3 py-2">PETROLEOS MEXICANOS</td>
-                                    <td class="px-3 py-2">PME380607P35</td>
-                                    <td class="px-3 py-2">
-                                        <button
-                                            class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
-                                            style="background-color: #1571BB;">Seleccionar</button>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="px-3 py-2">FRANCISCO LEONARDO ORNELAS SANCHEZ</td>
-                                    <td class="px-3 py-2">OESF001215HA1</td>
-                                    <td class="px-3 py-2">
-                                        <button
-                                            class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
-                                            style="background-color: #1571BB;">Seleccionar</button>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="px-3 py-2">NOVO IME</td>
-                                    <td class="px-3 py-2">HRU020823LQ1</td>
-                                    <td class="px-3 py-2">
-                                        <button
-                                            class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
-                                            style="background-color: #1571BB;">Seleccionar</button>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="px-3 py-2">JOSUE RAFAEL AYALA SAUCEDO</td>
-                                    <td class="px-3 py-2">AASJ881023UT1</td>
-                                    <td class="px-3 py-2">
-                                        <button
-                                            class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
-                                            style="background-color: #1571BB;">Seleccionar</button>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="px-3 py-2">SELABE MOTORS</td>
-                                    <td class="px-3 py-2">SMO080413PA</td>
-                                    <td class="px-3 py-2">
-                                        <button
-                                            class="inline-flex items-center px-4 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition"
-                                            style="background-color: #1571BB;">Seleccionar</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+      <!-- RFC -->
+      <div class="relative min-w-0">
+        <input
+          type="text"
+          id="rfc"
+          class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          autocomplete="off"
+        />
+        <label for="rfc"
+          class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
+                 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
+          🆔 RFC <span class="text-red-500">*</span>
+        </label>
+      </div>
 
-            <div class="mt-4">
-                <button class="bg-gray-200 dark:bg-gray-600 px-3 py-2 rounded-lg text-sm">
-                    ➕ Información Opcional
-                </button>
-            </div>
-        </section>
+      <!-- Código Postal -->
+      <div class="relative min-w-0">
+        <input
+          type="text"
+          id="cp"
+          class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          inputmode="numeric"
+          autocomplete="postal-code"
+        />
+        <label for="cp"
+          class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
+                 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
+          📮 Código Postal <span class="text-red-500">*</span>
+        </label>
+      </div>
+
+      <!-- Régimen Fiscal -->
+      <div class="relative min-w-0">
+        <input
+          type="text"
+          id="regimen"
+          class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          autocomplete="off"
+        />
+        <label for="regimen"
+          class="absolute text:[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
+                 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
+          📄 Régimen Fiscal <span class="text-red-500">*</span>
+        </label>
+      </div>
+
+      <!-- Uso CFDI -->
+      <div class="relative min-w-0">
+        <select
+          id="uso_cfdi"
+          class="block w-full py-2.5 px-2 sm:px-2.5 pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        >
+          <option value="" selected disabled>Selecciona una opción…</option>
+          <option>G03 - Gastos en general</option>
+          <option>D01 - Honorarios médicos</option>
+          <option>P01 - Por definir</option>
+        </select>
+        <label for="uso_cfdi"
+          class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+          📋 Uso CFDI <span class="text-red-500">*</span>
+        </label>
+      </div>
+
+      <!-- Correo -->
+      <div class="relative md:col-span-2 min-w-0">
+        <input
+          type="email"
+          id="correo"
+          class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          autocomplete="email"
+        />
+        <label for="correo"
+          class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
+                 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
+          📧 Correo Electrónico <span class="text-red-500">*</span>
+        </label>
+      </div>
+    </form>
+
+    <!-- Lista de clientes -->
+    <aside class="min-w-0">
+      <h3 class="font-medium mb-2">📋 Clientes registrados</h3>
+
+      <!-- Scrollea horizontal en pantallas muy pequeñas -->
+      <div class="overflow-x-auto overflow-y-auto max-h-60 border rounded-lg">
+        <table class="w-full table-auto text-sm text-left text-gray-700 dark:text-gray-300">
+          <thead class="bg-gray-200 dark:bg-gray-700">
+            <tr>
+              <th class="px-3 py-2">Nombre</th>
+              <th class="px-3 py-2">ID</th>
+              <th class="px-3 py-2 w-1/5">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+              <td class="px-3 py-2 break-words">SELABE MOTORS</td>
+              <td class="px-3 py-2 break-words">SMO080413PA</td>
+              <td class="px-3 py-2">
+                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+              </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+              <td class="px-3 py-2 break-words">PETROLEOS MEXICANOS</td>
+              <td class="px-3 py-2 break-words">PME380607P35</td>
+              <td class="px-3 py-2">
+                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+              </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+              <td class="px-3 py-2 break-words">FRANCISCO LEONARDO ORNELAS SANCHEZ</td>
+              <td class="px-3 py-2 break-words">OESF001215HA1</td>
+              <td class="px-3 py-2">
+                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+              </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+              <td class="px-3 py-2 break-words">NOVO IME</td>
+              <td class="px-3 py-2 break-words">HRU020823LQ1</td>
+              <td class="px-3 py-2">
+                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+              </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+              <td class="px-3 py-2 break-words">JOSUE RAFAEL AYALA SAUCEDO</td>
+              <td class="px-3 py-2 break-words">AASJ881023UT1</td>
+              <td class="px-3 py-2">
+                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+              </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+              <td class="px-3 py-2 break-words">SELABE MOTORS</td>
+              <td class="px-3 py-2 break-words">SMO080413PA</td>
+              <td class="px-3 py-2">
+                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+  </div>
+
+  <div class="mt-4">
+    <button class="bg-gray-200 dark:bg-gray-600 px-3 py-2 rounded-lg text-sm">
+      ➕ Información Opcional
+    </button>
+  </div>
+</section>
+
+
 
         <hr class="my-6 border-t border-gray-300 dark:border-gray-600" />
 
@@ -243,7 +325,7 @@
 
             <div class="mb-2">
                 <label for="conceptoInput" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    🧾 Concepto <span class="text-red-500">(*)</span>
+                    🧾 Concepto <span class="text-red-500">*</span>
                 </label>
                 <div class="flex w-full">
                     <input type="text" placeholder="Ejemplo: Room Charge" id="conceptoInput"
@@ -258,21 +340,21 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        📦 Medida comercial <span class="text-red-500">(*)</span>
+                        📦 Medida comercial <span class="text-red-500">*</span>
                     </label>
                     <input type="text" placeholder="Ejemplo: Habitación"
                         class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600" />
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        🔢 Cantidad <span class="text-red-500">(*)</span>
+                        🔢 Cantidad <span class="text-red-500">*</span>
                     </label>
                     <input type="number" placeholder="Cantidad"
                         class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600" />
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        💲 Precio unitario <span class="text-red-500">(*)</span>
+                        💲 Precio unitario <span class="text-red-500">*</span>
                     </label>
                     <input type="number" placeholder="Precio Unitario"
                         class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600" />
@@ -289,29 +371,13 @@
                         <h3 class="text-yellow-500 font-bold text-lg">Descuento</h3>
                         <p class="text-sm text-yellow-500">Indique si el concepto tiene descuento</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 border border-yellow-500 rounded-lg p-4 text-center">
-                        <h3 class="text-yellow-500 font-bold text-lg">Descuento</h3>
-                        <p class="text-sm text-yellow-500">Indique si el concepto tiene descuento</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 border border-yellow-500 rounded-lg p-4 text-center">
-                        <h3 class="text-yellow-500 font-bold text-lg">Descuento</h3>
-                        <p class="text-sm text-yellow-500">Indique si el concepto tiene descuento</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 border border-yellow-500 rounded-lg p-4 text-center">
-                        <h3 class="text-yellow-500 font-bold text-lg">Descuento</h3>
-                        <p class="text-sm text-yellow-500">Indique si el concepto tiene descuento</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 border border-yellow-500 rounded-lg p-4 text-center">
-                        <h3 class="text-yellow-500 font-bold text-lg">Descuento</h3>
-                        <p class="text-sm text-yellow-500">Indique si el concepto tiene descuento</p>
-                    </div>
                 </div>
             </div>
 
-            <div class="text-center mt-2">
-                <button
-                    class="w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 py-2 rounded-lg text-sm font-medium">
-                    ➕ Agregar concepto
+            <div class="text-center mt-2 w-full mx-auto">
+                <button id="add-concept-btn" class="modern-btn w-full py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300">
+                    <i class="ph ph-plus"></i>
+                    Agregar concepto
                 </button>
             </div>
         </section>
@@ -390,7 +456,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                            Tipo de Relación <span class="text-red-500">(*)</span>
+                                            Tipo de Relación <span class="text-red-500">*</span>
                                         </label>
                                         <select
                                             class="w-full rounded-lg py-2 px-3 text-sm border border-gray-300 text-gray-900 dark:text-white dark:bg-gray-700 dark:border-gray-600">
@@ -402,7 +468,7 @@
 
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                            UUID <span class="text-red-500">(*)</span>
+                                            UUID <span class="text-red-500">*</span>
                                         </label>
                                         <input type="text" placeholder="Ejemplo: F6B10FF9-B144-4112-911D-B9810A7FD56F"
                                             class="w-full rounded-lg py-2 px-3 text-sm border border-gray-300 text-gray-900 dark:text-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:placeholder-gray-400" />
@@ -432,7 +498,7 @@
                     <div class="p-4 space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                💰 Moneda <span class="text-red-500">(*)</span>
+                                💰 Moneda <span class="text-red-500">*</span>
                             </label>
                             <select
                                 class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
@@ -441,14 +507,14 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                💱 Tasa de cambio <span class="text-red-500">(*)</span>
+                                💱 Tasa de cambio <span class="text-red-500">*</span>
                             </label>
                             <input type="number" placeholder="0.00"
                                 class="w-full rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input" />
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                💳 Método de Pago <span class="text-red-500">(*)</span>
+                                💳 Método de Pago <span class="text-red-500">*</span>
                             </label>
                             <select
                                 class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
@@ -464,7 +530,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                🧾 Forma de Pago <span class="text-red-500">(*)</span>
+                                🧾 Forma de Pago <span class="text-red-500">*</span>
                             </label>
                             <select
                                 class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
@@ -529,9 +595,9 @@
                             <span>0.00</span>
                         </div>
                         <div class="pt-4">
-                            <button data-modal-target="modal-desglose" data-modal-toggle="modal-desglose"
-                                class="w-full text-sm font-medium text-white bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg">
-                                📄 Ver desglose
+                            <button data-modal-target="modal-desglose" data-modal-toggle="modal-desglose" class="modern-btn w-full py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300">
+                                <i class="ph ph-chart-bar"></i>
+                                Ver desglose
                             </button>
                             <div class="mt-3 text-center">
                                 <span
@@ -548,7 +614,7 @@
             </div>
         </section>
         <div class="text-center">
-            <button id="generate-btn" class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg mt-6">
+            <button id="generate-btn" class="modern-btn w-25 py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300">
                 Generar comprobante
             </button>
         </div>
@@ -724,4 +790,20 @@
             </div>
         </div>
     </div>
+    <script>
+        const html = document.documentElement;
+        const btn = document.getElementById('modoOscuro');
+        const iconLuna = document.getElementById('iconLuna');
+        const iconSol = document.getElementById('iconSol');
+
+        btn.addEventListener('click', () => {
+            const isDark = html.classList.toggle('dark');
+            iconLuna.classList.toggle('hidden', isDark);
+            iconSol.classList.toggle('hidden', !isDark);
+        });
+
+        document.getElementById('generate-btn').addEventListener('click', () => {
+            alert('✅ Comprobante generado (lógica demo)');
+        });
+    </script>
 </html>
