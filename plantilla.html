@@ -617,7 +617,6 @@
             </label>
             </div>
 
-            <!-- Contraseña -->
             <div class="relative min-w-0">
             <input
                 type="password"
@@ -634,24 +633,21 @@
                     Contraseña
             </label>
             </div>
-
-            <!-- Select -->
-            <div class="relative min-w-0">
-            <select
-                id="sel_opciones"
-                class="block w-full py-2.5 px-2 sm:px-2.5 pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            >
-                <option value="" selected disabled>Seleccione…</option>
-                <option value="op1">Opción 1</option>
-                <option value="op2">Opción 2</option>
-                <option value="op3">Opción 3</option>
-            </select>
-            <label for="sel_opciones"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                    peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-option"></i>
-                    Selecciona una opción
-            </label>
+             <div class="relative min-w-0">
+                <input
+                type="email"
+                id="ctc_email"
+                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
+                autocomplete="email"
+                />
+                <label for="ctc_email"
+                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                        peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                <i class="ph ph-envelope"></i>
+                        Correo Electrónico <span class="text-red-500">*</span>
+                </label>
             </div>
         </div>
     </section>
