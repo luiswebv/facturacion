@@ -248,7 +248,6 @@
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-4 space-y-8">
 
-    <div class="container mx-auto px-4 py-6 space-y-12">
         <div class="text-right">
             <button id="modoOscuro"
                 class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded transition">
@@ -578,72 +577,76 @@
     <section class="max-w-screen-xl mx-auto px-3 sm:px-4">
         <h2 class="text-3xl font-semibold dark:text-white mb-4">Inputs</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 min-w-0">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 min-w-0" autocomplete="off">
             <!-- Nombre -->
             <div class="relative min-w-0">
-            <input
-                type="text"
-                id="inp_nombre"
-                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                autocomplete="name"
-            />
-            <label for="inp_nombre"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                    peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
-                    peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-identification-card"></i> Nombre <span class="text-red-500">*</span>
-            </label>
+                <input
+                    type="text"
+                    id="inp_nombre"
+                    autocomplete="nope"
+                    class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                />
+                <label for="inp_nombre"
+                    class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                        peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                    <i class="ph ph-identification-card"></i> Nombre <span class="text-red-500">*</span>
+                </label>
             </div>
 
             <!-- Edad -->
             <div class="relative min-w-0">
-            <input
-                type="number"
-                id="inp_edad"
-                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                inputmode="numeric"
-            />
-            <label for="inp_edad"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                    peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
-                    peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-user-focus"></i>
-                    Edad
-            </label>
-            </div>
-
-            <div class="relative min-w-0">
-            <input
-                type="password"
-                id="inp_password"
-                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                autocomplete="new-password"
-            />
-            <label for="inp_password"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                    peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
-                    peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-password"></i>
-                    Contraseña
-            </label>
-            </div>
-             <div class="relative min-w-0">
                 <input
-                type="email"
-                id="ctc_email"
-                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                autocomplete="email"
+                    type="number"
+                    id="inp_edad"
+                    autocomplete="nope"
+                    inputmode="numeric"
+                    class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
                 />
-                <label for="ctc_email"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                <label for="inp_edad"
+                    class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
                         peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
                         peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-envelope"></i>
-                        Correo Electrónico <span class="text-red-500">*</span>
+                    <i class="ph ph-user-focus"></i>
+                        Edad
+                </label>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="relative min-w-0">
+                <input
+                    type="password"
+                    id="inp_password"
+                    autocomplete="new-password"
+                    class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                />
+                <label for="inp_password"
+                    class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                        peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                    <i class="ph ph-password"></i>
+                        Contraseña
+                </label>
+            </div>
+
+            <!-- Email -->
+            <div class="relative min-w-0">
+                <input
+                    type="email"
+                    id="ctc_email"
+                    autocomplete="nope"
+                    class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                />
+                <label for="ctc_email"
+                    class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                            peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                    <i class="ph ph-envelope"></i>
+                            Correo Electrónico <span class="text-red-500">*</span>
                 </label>
             </div>
         </div>
@@ -655,70 +658,70 @@
             Ejemplo de formulario con campos comunes: nombre, correo y mensaje. Incluye validación visual y diseño responsivo.
         </p>
 
-        <form class="space-y-6 min-w-0">
+        <form class="space-y-6 min-w-0" autocomplete="off">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 min-w-0">
-            <!-- Nombre -->
-            <div class="relative min-w-0">
-                <input
-                type="text"
-                id="ctc_nombre"
-                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                autocomplete="name"
-                />
-                <label for="ctc_nombre"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
-                        peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-user"></i>
-                     Nombre <span class="text-red-500">*</span>
-                </label>
+                <!-- Nombre -->
+                <div class="relative min-w-0">
+                    <input
+                        type="text"
+                        id="ctc_nombre"
+                        autocomplete="nope"
+                        class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                    />
+                    <label for="ctc_nombre"
+                        class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                                peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                                peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                        <i class="ph ph-user"></i>
+                            Nombre <span class="text-red-500">*</span>
+                    </label>
+                </div>
+
+                <!-- Correo -->
+                <div class="relative min-w-0">
+                    <input
+                        type="email"
+                        id="ctc_email"
+                        autocomplete="nope"
+                        class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                    />
+                    <label for="ctc_email"
+                        class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                                peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                                peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                        <i class="ph ph-envelope"></i>
+                                Correo Electrónico <span class="text-red-500">*</span>
+                    </label>
+                </div>
             </div>
 
-            <!-- Correo -->
+            <!-- Mensaje -->
             <div class="relative min-w-0">
-                <input
-                type="email"
-                id="ctc_email"
-                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                autocomplete="email"
-                />
-                <label for="ctc_email"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                        peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                <textarea
+                    id="ctc_mensaje"
+                    autocomplete="nope"
+                    rows="4"
+                    class="block w-full resize-y px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-6 sm:pt-8 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                ></textarea>
+                <label for="ctc_mensaje"
+                    class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                        peer-placeholder-shown:top-4 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
                         peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-envelope"></i>
-                        Correo Electrónico <span class="text-red-500">*</span>
+                    <i class="ph ph-chat-circle"></i>
+                    Mensaje <span class="text-red-500">*</span>
                 </label>
-            </div>
-            </div>
-
-            <!-- Mensaje (textarea con label flotante) -->
-            <div class="relative min-w-0">
-            <textarea
-                id="ctc_mensaje"
-                rows="4"
-                class="block w-full resize-y px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-6 sm:pt-8 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-            ></textarea>
-            <label for="ctc_mensaje"
-                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                    peer-placeholder-shown:top-4 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
-                    peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-                <i class="ph ph-chat-circle"></i>
-                 Mensaje <span class="text-red-500">*</span>
-            </label>
             </div>
 
             <div class="flex justify-end">
-            <button type="submit" class="modern-btn w-full py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">
-                <i class="ph ph-paper-plane-right"></i> Enviar
-            </button>
+                <button type="submit" class="modern-btn w-full py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">
+                    <i class="ph ph-paper-plane-right"></i> Enviar
+                </button>
             </div>
         </form>
     </section>
-
 
     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
