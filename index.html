@@ -139,9 +139,7 @@
   <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">👤 Cliente</h2>
 
   <div class="grid gap-6 lg:grid-cols-2">
-    <!-- Formulario -->
     <form class="grid grid-cols-1 md:grid-cols-2 gap-4 min-w-0">
-      <!-- Razón social -->
       <div class="relative min-w-0">
         <input
           type="text"
@@ -157,8 +155,6 @@
           <i class="ph ph-identification-card"></i> Razón social
         </label>
       </div>
-
-      <!-- RFC -->
       <div class="relative min-w-0">
         <input
           type="text"
@@ -175,8 +171,6 @@
                 RFC <span class="text-red-500">*</span>
         </label>
       </div>
-
-      <!-- Código Postal -->
       <div class="relative min-w-0">
         <input
           type="text"
@@ -194,8 +188,6 @@
                  Código Postal <span class="text-red-500">*</span>
         </label>
       </div>
-
-      <!-- Régimen Fiscal -->
       <div class="relative min-w-0">
         <input
           type="text"
@@ -212,8 +204,6 @@
                  Régimen Fiscal <span class="text-red-500">*</span>
         </label>
       </div>
-
-      <!-- Uso CFDI -->
       <div class="relative min-w-0">
         <label for="uso_cfdi"
         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -230,8 +220,6 @@
           <option>P01 - Por definir</option>
         </select>
       </div>
-
-      <!-- Correo -->
       <div class="relative md:col-span-2 min-w-0">
         <input
           type="email"
@@ -249,12 +237,8 @@
         </label>
       </div>
     </form>
-
-    <!-- Lista de clientes -->
     <aside class="min-w-0">
       <h3 class="font-medium mb-2">📋 Clientes registrados</h3>
-
-      <!-- Scrollea horizontal en pantallas muy pequeñas -->
       <div class="overflow-x-auto overflow-y-auto max-h-60 border rounded-lg">
         <table class="w-full table-auto text-sm text-left text-gray-700 dark:text-gray-300">
           <thead class="bg-gray-200 dark:bg-gray-700">
@@ -325,8 +309,6 @@
 
         <section class="max-w-screen-xl mx-auto px-3 sm:px-4">
             <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">📦 Conceptos</h2>
-
-            <!-- Concepto -->
             <div class="relative min-w-0 mb-4 flex">
                 <div class="relative w-full">
                     <input
@@ -353,9 +335,7 @@
                 </button>
             </div>
 
-            <!-- Medida Comercial / Cantidad / Precio -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <!-- Medida Comercial -->
                 <div class="relative min-w-0">
                     <input
                         type="text"
@@ -375,8 +355,6 @@
                             Medida comercial <span class="text-red-500">*</span>
                     </label>
                 </div>
-
-                <!-- Cantidad -->
                 <div class="relative min-w-0">
                     <input
                         type="number"
@@ -397,8 +375,6 @@
                             Cantidad <span class="text-red-500">*</span>
                     </label>
                 </div>
-
-                <!-- Precio Unitario -->
                 <div class="relative min-w-0">
                     <input
                         type="number"
@@ -420,8 +396,6 @@
                     </label>
                 </div>
             </div>
-
-            <!-- Tarjetas -->
             <div class="overflow-x-auto">
                 <div class="grid grid-flow-col auto-cols-[minmax(250px,1fr)] gap-4 mb-4">
                     <div class="bg-white dark:bg-gray-800 border border-cyan-600 rounded-lg p-4 text-center">
@@ -434,8 +408,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Botón -->
             <div class="text-center mt-2 w-full mx-auto">
                 <button id="add-concept-btn" class="modern-btn w-full py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300">
                     <i class="ph ph-plus"></i>
@@ -567,8 +539,6 @@
                                 <option>Moneda...</option>
                             </select>
                         </div>
-
-                        <!-- Tasa de cambio -->
                         <div class="relative min-w-0">
                             <input
                                 type="number"
@@ -588,8 +558,6 @@
                                     Tasa de cambio <span class="text-red-500">*</span>
                             </label>
                         </div>
-
-                        <!-- Método de Pago (select) -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                 <i class="ph ph-credit-card"></i>
@@ -600,8 +568,6 @@
                                 <option>Método de Pago...</option>
                             </select>
                         </div>
-
-                        <!-- Condiciones de pago -->
                         <div class="relative min-w-0">
                             <input
                                 type="text"
@@ -621,8 +587,6 @@
                                     Condiciones de pago
                             </label>
                         </div>
-
-                        <!-- Forma de Pago (select) -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                 <i class="ph ph-money-wavy"></i>
@@ -633,8 +597,6 @@
                                 <option>Forma de Pago...</option>
                             </select>
                         </div>
-
-                        <!-- No. de Ticket -->
                         <div class="relative min-w-0">
                             <input
                                 type="text"
