@@ -171,7 +171,8 @@
           class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
                  peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
                  peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
-          🆔 RFC <span class="text-red-500">*</span>
+                <i class="ph ph-identification-badge"></i>
+                RFC <span class="text-red-500">*</span>
         </label>
       </div>
 
@@ -189,7 +190,8 @@
           class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
                  peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
                  peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
-          📮 Código Postal <span class="text-red-500">*</span>
+                <i class="ph ph-mailbox"></i>
+                 Código Postal <span class="text-red-500">*</span>
         </label>
       </div>
 
@@ -206,26 +208,27 @@
           class="absolute text:[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
                  peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
                  peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
-          📄 Régimen Fiscal <span class="text-red-500">*</span>
+                <i class="ph ph-article"></i>
+                 Régimen Fiscal <span class="text-red-500">*</span>
         </label>
       </div>
 
       <!-- Uso CFDI -->
       <div class="relative min-w-0">
+        <label for="uso_cfdi"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <i class="ph ph-invoice"></i>
+                Uso CFDI <span class="text-red-500">*</span>
+        </label>
         <select
           id="uso_cfdi"
-          class="block w-full py-2.5 px-2 sm:px-2.5 pt-4 text-[13px] sm:text-sm text-gray-900 bg-transparent rounded-lg border dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         >
           <option value="" selected disabled>Selecciona una opción…</option>
           <option>G03 - Gastos en general</option>
           <option>D01 - Honorarios médicos</option>
           <option>P01 - Por definir</option>
         </select>
-        <label for="uso_cfdi"
-          class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
-                 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
-          📋 Uso CFDI <span class="text-red-500">*</span>
-        </label>
       </div>
 
       <!-- Correo -->
@@ -241,7 +244,8 @@
           class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
                  peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2
                  peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1">
-          📧 Correo Electrónico <span class="text-red-500">*</span>
+                <i class="ph ph-envelope"></i>
+                 Correo Electrónico <span class="text-red-500">*</span>
         </label>
       </div>
     </form>
@@ -265,42 +269,42 @@
               <td class="px-3 py-2 break-words">SELABE MOTORS</td>
               <td class="px-3 py-2 break-words">SMO080413PA</td>
               <td class="px-3 py-2">
-                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+                <button class="modern-btn w-full py-2 px-4 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">Seleccionar</button>
               </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
               <td class="px-3 py-2 break-words">PETROLEOS MEXICANOS</td>
               <td class="px-3 py-2 break-words">PME380607P35</td>
               <td class="px-3 py-2">
-                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+                <button class="modern-btn w-full py-2 px-4 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">Seleccionar</button>
               </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
               <td class="px-3 py-2 break-words">FRANCISCO LEONARDO ORNELAS SANCHEZ</td>
               <td class="px-3 py-2 break-words">OESF001215HA1</td>
               <td class="px-3 py-2">
-                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+                <button class="modern-btn w-full py-2 px-4 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">Seleccionar</button>
               </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
               <td class="px-3 py-2 break-words">NOVO IME</td>
               <td class="px-3 py-2 break-words">HRU020823LQ1</td>
               <td class="px-3 py-2">
-                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+                <button class="modern-btn w-full py-2 px-4 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">Seleccionar</button>
               </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
               <td class="px-3 py-2 break-words">JOSUE RAFAEL AYALA SAUCEDO</td>
               <td class="px-3 py-2 break-words">AASJ881023UT1</td>
               <td class="px-3 py-2">
-                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+                <button class="modern-btn w-full py-2 px-4 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">Seleccionar</button>
               </td>
             </tr>
             <tr class="bg-white dark:bg-gray-800">
               <td class="px-3 py-2 break-words">SELABE MOTORS</td>
               <td class="px-3 py-2 break-words">SMO080413PA</td>
               <td class="px-3 py-2">
-                <button class="inline-flex items-center px-3 py-2 rounded-lg text-white shadow-md hover:shadow-lg transition whitespace-nowrap" style="background-color:#1571BB;">Seleccionar</button>
+                <button class="modern-btn w-full py-2 px-4 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #1571BB;">Seleccionar</button>
               </td>
             </tr>
           </tbody>
@@ -309,58 +313,115 @@
     </aside>
   </div>
 
-  <div class="mt-4">
-    <button class="bg-gray-200 dark:bg-gray-600 px-3 py-2 rounded-lg text-sm">
-      ➕ Información Opcional
+  <div class="mt-4 flex">
+    <button class="modern-btn w-1/3 py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300" style="background-color: #3D91C3;">
+        <i class="ph ph-plus"></i>
+        Información Opcional
     </button>
   </div>
 </section>
 
-
-
         <hr class="my-6 border-t border-gray-300 dark:border-gray-600" />
 
-        <section>
+        <section class="max-w-screen-xl mx-auto px-3 sm:px-4">
             <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">📦 Conceptos</h2>
 
-            <div class="mb-2">
-                <label for="conceptoInput" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    🧾 Concepto <span class="text-red-500">*</span>
-                </label>
-                <div class="flex w-full">
-                    <input type="text" placeholder="Ejemplo: Room Charge" id="conceptoInput"
-                        class="form-input w-full rounded-l-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600" />
-                    <button type="button" data-modal-target="modal-concepto" data-modal-toggle="modal-concepto"
-                        class="bg-cyan-600 text-white px-4 text-sm font-medium rounded-r-lg hover:bg-cyan-700 border border-l-0 border-cyan-600 dark:border-gray-600">
-                        🔍
-                    </button>
+            <!-- Concepto -->
+            <div class="relative min-w-0 mb-4 flex">
+                <div class="relative w-full">
+                    <input
+                        type="text"
+                        id="conceptoInput"
+                        autocomplete="nope"
+                        placeholder=" "
+                        class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm 
+                            text-gray-900 bg-transparent rounded-l-lg border border-gray-300 dark:border-gray-600 
+                            dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    />
+                    <label for="conceptoInput"
+                        class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                            top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                            peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                            <i class="ph ph-newspaper"></i>
+                            Concepto <span class="text-red-500">*</span>
+                    </label>
                 </div>
+                <button type="button" data-modal-target="modal-concepto" data-modal-toggle="modal-concepto"
+                    class="bg-cyan-600 text-white px-4 text-sm font-medium rounded-r-lg hover:bg-cyan-700 border border-l-0 border-cyan-600 dark:border-gray-600">
+                    <i class="ph ph-magnifying-glass"></i>
+                </button>
             </div>
 
+            <!-- Medida Comercial / Cantidad / Precio -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        📦 Medida comercial <span class="text-red-500">*</span>
+                <!-- Medida Comercial -->
+                <div class="relative min-w-0">
+                    <input
+                        type="text"
+                        id="inp_medida"
+                        autocomplete="nope"
+                        placeholder=" "
+                        class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm 
+                            text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 
+                            dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    />
+                    <label for="inp_medida"
+                        class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                            top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                            peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                            <i class="ph ph-ruler"></i>
+                            Medida comercial <span class="text-red-500">*</span>
                     </label>
-                    <input type="text" placeholder="Ejemplo: Habitación"
-                        class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600" />
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        🔢 Cantidad <span class="text-red-500">*</span>
+
+                <!-- Cantidad -->
+                <div class="relative min-w-0">
+                    <input
+                        type="number"
+                        id="inp_cantidad"
+                        autocomplete="nope"
+                        inputmode="numeric"
+                        placeholder=" "
+                        class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm 
+                            text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 
+                            dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    />
+                    <label for="inp_cantidad"
+                        class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                            top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                            peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                        <i class="ph ph-number-circle-eight"></i>
+                            Cantidad <span class="text-red-500">*</span>
                     </label>
-                    <input type="number" placeholder="Cantidad"
-                        class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600" />
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        💲 Precio unitario <span class="text-red-500">*</span>
+
+                <!-- Precio Unitario -->
+                <div class="relative min-w-0">
+                    <input
+                        type="number"
+                        id="inp_precio"
+                        autocomplete="nope"
+                        inputmode="decimal"
+                        placeholder=" "
+                        class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm 
+                            text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600 
+                            dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    />
+                    <label for="inp_precio"
+                        class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform 
+                            top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                            peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                            <i class="ph ph-money"></i>
+                            Precio unitario <span class="text-red-500">*</span>
                     </label>
-                    <input type="number" placeholder="Precio Unitario"
-                        class="form-input w-full rounded-lg py-2 px-3 text-sm dark:bg-gray-700 dark:border-gray-600" />
                 </div>
             </div>
 
+            <!-- Tarjetas -->
             <div class="overflow-x-auto">
                 <div class="grid grid-flow-col auto-cols-[minmax(250px,1fr)] gap-4 mb-4">
                     <div class="bg-white dark:bg-gray-800 border border-cyan-600 rounded-lg p-4 text-center">
@@ -374,6 +435,7 @@
                 </div>
             </div>
 
+            <!-- Botón -->
             <div class="text-center mt-2 w-full mx-auto">
                 <button id="add-concept-btn" class="modern-btn w-full py-3 px-6 text-white font-semibold rounded-xl transition-all duration-300">
                     <i class="ph ph-plus"></i>
@@ -381,7 +443,6 @@
                 </button>
             </div>
         </section>
-
 
         <hr class="my-6 border-t border-gray-300 dark:border-gray-600" />
 
@@ -401,23 +462,23 @@
                     <div class="p-4 space-y-2">
                         <button data-modal-target="modal-relacionados" data-modal-toggle="modal-relacionados"
                             class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
-                            Comprobantes Relacionados <span class="text-purple-500 text-lg">➕</span>
+                            Comprobantes Relacionados <span class="text-gray-500 text-lg"><i class="ph ph-plus"></i></span>
                         </button>
                         <button data-modal-target="modal-global" data-modal-toggle="modal-global"
                             class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
-                            Información Global <span class="text-purple-500 text-lg">➕</span>
+                            Información Global <span class="text-gray-500 text-lg"><i class="ph ph-plus"></i></span>
                         </button>
                         <button data-modal-target="modal-complementos" data-modal-toggle="modal-complementos"
                             class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
-                            Complementos <span class="text-purple-500 text-lg">➕</span>
+                            Complementos <span class="text-gray-500 text-lg"><i class="ph ph-plus"></i></span>
                         </button>
                         <button data-modal-target="modal-addendas" data-modal-toggle="modal-addendas"
                             class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
-                            Addendas <span class="text-purple-500 text-lg">➕</span>
+                            Addendas <span class="text-gray-500 text-lg"><i class="ph ph-plus"></i></span>
                         </button>
                         <button data-modal-target="modal-adicional" data-modal-toggle="modal-adicional"
                             class="w-full flex justify-between items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
-                            Información Adicional <span class="text-purple-500 text-lg">➕</span>
+                            Información Adicional <span class="text-gray-500 text-lg"><i class="ph ph-plus"></i></span>
                         </button>
                     </div>
                     <div class="p-4 pt-2 text-center space-y-2">
@@ -498,51 +559,100 @@
                     <div class="p-4 space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                💰 Moneda <span class="text-red-500">*</span>
+                                <i class="ph ph-coin-vertical"></i>
+                                Moneda <span class="text-red-500">*</span>
                             </label>
                             <select
                                 class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
                                 <option>Moneda...</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                💱 Tasa de cambio <span class="text-red-500">*</span>
+
+                        <!-- Tasa de cambio -->
+                        <div class="relative min-w-0">
+                            <input
+                                type="number"
+                                id="inp_tasa"
+                                autocomplete="nope"
+                                placeholder=" "
+                                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm
+                                    text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600
+                                    dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            />
+                            <label for="inp_tasa"
+                                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform
+                                    top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                                    peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                                    peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                                    <i class="ph ph-arrows-clockwise"></i>
+                                    Tasa de cambio <span class="text-red-500">*</span>
                             </label>
-                            <input type="number" placeholder="0.00"
-                                class="w-full rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input" />
                         </div>
+
+                        <!-- Método de Pago (select) -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                💳 Método de Pago <span class="text-red-500">*</span>
+                                <i class="ph ph-credit-card"></i>
+                                Método de Pago <span class="text-red-500">*</span>
                             </label>
                             <select
                                 class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
                                 <option>Método de Pago...</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                🕒 Condiciones de pago
+
+                        <!-- Condiciones de pago -->
+                        <div class="relative min-w-0">
+                            <input
+                                type="text"
+                                id="inp_condiciones"
+                                autocomplete="nope"
+                                placeholder=" "
+                                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm
+                                    text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600
+                                    dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            />
+                            <label for="inp_condiciones"
+                                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform
+                                    top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                                    peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                                    peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                                    <i class="ph ph-calendar-check"></i>
+                                    Condiciones de pago
                             </label>
-                            <input type="text" placeholder="Ejemplo: Pago en 3 meses"
-                                class="w-full rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input" />
                         </div>
+
+                        <!-- Forma de Pago (select) -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                🧾 Forma de Pago <span class="text-red-500">*</span>
+                                <i class="ph ph-money-wavy"></i>
+                                Forma de Pago <span class="text-red-500">*</span>
                             </label>
                             <select
                                 class="w-full appearance-none rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input">
                                 <option>Forma de Pago...</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                🎫 No. de Ticket
+
+                        <!-- No. de Ticket -->
+                        <div class="relative min-w-0">
+                            <input
+                                type="text"
+                                id="inp_ticket"
+                                autocomplete="nope"
+                                placeholder=" "
+                                class="block w-full px-2 sm:px-2.5 pb-2 sm:pb-2.5 pt-3 sm:pt-4 text-[13px] sm:text-sm
+                                    text-gray-900 bg-transparent rounded-lg border border-gray-300 dark:border-gray-600
+                                    dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            />
+                            <label for="inp_ticket"
+                                class="absolute text-[13px] sm:text-sm text-gray-500 dark:text-gray-400 duration-300 transform
+                                    top-2 -translate-y-4 scale-75 z-10 origin-[0] bg-white dark:bg-gray-900 px-1.5 sm:px-2
+                                    peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100
+                                    peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 start-1">
+                                    <i class="ph ph-ticket"></i>
+                                    No. de Ticket
                             </label>
-                            <input type="text" placeholder="Ejemplo: 483..."
-                                class="w-full rounded-lg py-2 px-3 text-sm border dark:bg-gray-700 dark:border-gray-600 form-input" />
                         </div>
                     </div>
                 </div>
